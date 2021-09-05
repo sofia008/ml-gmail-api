@@ -13,6 +13,8 @@ SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 def main():
 
+    print("##### Inicio del programa #####")
+
     ####################################
     ########## AUTH GMAIL API ##########
     ####################################
@@ -155,7 +157,6 @@ def main():
                     # Valido que la tabla que necesito este en el show table
                     # si no existe la creo y si existe hago el insert
                     if table in show_tables:
-                        print("Table exist")
 
                         # Defino el comando
                         # sql = "INSERT INTO ml_devops_mail (sender, subject, date) VALUES (%s, %s, %s)"
@@ -171,7 +172,7 @@ def main():
                         mydb.close()
 
                     else:
-                        print("Table does not exist")
+
                         # Creo la tabla
                         cursor.execute("CREATE TABLE ml_devops_mail (id INT AUTO_INCREMENT UNIQUE PRIMARY KEY, sender VARCHAR(255), subject VARCHAR(255), date VARCHAR(255));")
 
@@ -233,7 +234,6 @@ def main():
                     # Valido que la tabla que necesito este en el show table
                     # si no existe la creo y si existe hago el insert
                     if table in show_tables:
-                        print("Table exist")
 
                         # Defino el comando
                         # sql = "INSERT INTO ml_devops_mail (sender, subject, date) VALUES (%s, %s, %s)"
@@ -249,7 +249,7 @@ def main():
                         mydb.close()
 
                     else:
-                        print("Table does not exist")
+
                         # Creo la tabla
                         cursor.execute("CREATE TABLE ml_devops_mail (id INT AUTO_INCREMENT UNIQUE PRIMARY KEY, sender VARCHAR(255), subject VARCHAR(255), date VARCHAR(255));")
 
@@ -269,6 +269,8 @@ def main():
                 print("Error, no concuerda la estructura del output con el match.")
         except:
             print("Hubo un error.")
+        
+    print("##### Finalizo el programa #####")    
 
 if __name__ == '__main__':
     main()
